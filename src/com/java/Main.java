@@ -1,38 +1,55 @@
 package com.java;
 
-import java.lang.*;
-import java.util.*;
-//import java.util.*;
+import java.util.Scanner;
 
+public class Main{
 
-class Main {
     public static void main(String[] args) {
+        // Write your code here
 
-//        int n = 25, firstTerm = 0, secondTerm = 1;
-//        System.out.println("Fibonacci Series till " + n + " terms:");
-//
-//        for (int i = 1; i <= n; ++i) {
-//            System.out.print(firstTerm + ", ");
-//
-//            // compute the next term
-//            int nextTerm = firstTerm + secondTerm;
-//            firstTerm = secondTerm;
-//            secondTerm = nextTerm;
-//        }
-        Queue<Integer> q1 = new LinkedList<>();
-        q1.add(1);
-        q1.add(2);
-        q1.add(3);
-        q1.poll();
-        for(Integer ele:q1){
-            System.out.println(ele);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number");
+        int N = sc.nextInt();
+        System.out.println("Enter choice");
+        int C = sc.nextInt();
+
+
+        if(C==1){
+            int total=0;
+
+            for(int num=1; num<=N; num++){
+                total=total+num;
+            }
+            System.out.println(total);
+
+        }else if(C==2){
+            int product=1;
+
+            for(int num=1; num<=N; num++){
+                product=product*num;
+            }
+            System.out.println(product);
+
+        }else{
+            System.out.println("-1");
+
         }
-        Stack<Integer> st = new Stack<>();
-        st.add(1);
-        st.add(2);
-        st.add(3);
-        for(int i:st){
-            System.out.println(i);
-        }
+
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
