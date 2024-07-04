@@ -1,10 +1,8 @@
 package com.java.dsa.set.problems;
 
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
 
 public class UniquePairsSolution {
 

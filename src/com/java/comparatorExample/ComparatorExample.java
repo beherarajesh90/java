@@ -1,7 +1,9 @@
 package com.java.comparatorExample;
 
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Scanner;
 
 // Write your Checker class here
 

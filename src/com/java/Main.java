@@ -1,42 +1,64 @@
 package com.java;
 
-import java.util.Scanner;
-
 public class Main{
 
-    public static void main(String[] args) {
-        // Write your code here
+    public static void main(String[] args) throws InterruptedException {
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter number");
-        int N = sc.nextInt();
-        System.out.println("Enter choice");
-        int C = sc.nextInt();
+        System.out.println("main thread started");
+        SharedResource sr = new SharedResource();
 
-
-        if(C==1){
-            int total=0;
-
-            for(int num=1; num<=N; num++){
-                total=total+num;
+        Thread producerThread = new Thread(()->{
+            System.out.println("producer thread:"+Thread.currentThread().getName());
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
-            System.out.println(total);
+            sr.addItem();
+        });
 
-        }else if(C==2){
-            int product=1;
+        Thread consumerThread = new Thread(()->{
+            System.out.println("consumer thread: "+Thread.currentThread().getName());
+            sr.consumeItem();
+        });
 
-            for(int num=1; num<=N; num++){
-                product=product*num;
-            }
-            System.out.println(product);
+        producerThread.start();
+        consumerThread.start();
 
-        }else{
-            System.out.println("-1");
+        producerThread.join();
+        consumerThread.join();
 
-        }
-
+        System.out.println("main thread ended");
 
     }
+}
+
+class SharedResource{
+    private boolean resourceAvailable;
+
+    public SharedResource(){
+        this.resourceAvailable = false;
+    }
+
+    public synchronized void addItem(){
+        resourceAvailable = true;
+        System.out.printf("resource made available by thread %s. Notifying all waiting threads\n", Thread.currentThread().getName());
+        notifyAll();
+    }
+
+    public synchronized void consumeItem(){
+        System.out.printf("consume thread invoked by thread %s\n", Thread.currentThread().getName());
+        while (!resourceAvailable){
+            System.out.printf("Thread %s is waiting..\n", Thread.currentThread().getName());
+            try {
+                wait(); // release monitor lock
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            System.out.println("consumed by thread "+Thread.currentThread().getName());
+        }
+    }
+
 }
 
 

@@ -1,7 +1,8 @@
 package com.java.hackerrank;
 
-import java.lang.reflect.*;
-import java.util.*;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Collections;
 
 class Student3 {
     private String name;

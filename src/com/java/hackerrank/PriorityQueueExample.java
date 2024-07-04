@@ -1,7 +1,9 @@
 package com.java.hackerrank;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Scanner;
 /*
  * Create the Student and Priorities classes here.
  */

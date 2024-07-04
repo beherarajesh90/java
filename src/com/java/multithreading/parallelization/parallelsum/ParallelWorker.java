@@ -1,7 +1,5 @@
 package com.java.multithreading.parallelization.parallelsum;
 
-import java.util.Arrays;
-
 public class ParallelWorker extends Thread{
 
     private int[] arr;

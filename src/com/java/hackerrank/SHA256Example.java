@@ -1,11 +1,11 @@
 package com.java.hackerrank;
 
 
-import java.util.*;
-import java.math.*;
-import java.security.NoSuchAlgorithmException;
-import java.security.*;
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Scanner;
 
 public class SHA256Example {
 

@@ -1,7 +1,7 @@
 package com.java.hackerrank;
 
-import java.util.*;
-import java.security.*;
+import java.security.Permission;
+import java.util.Scanner;
 
 interface Food {
     public String getType();

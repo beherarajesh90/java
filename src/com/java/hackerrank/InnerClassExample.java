@@ -1,7 +1,8 @@
 package com.java.hackerrank;
 
-import java.io.*;
-import java.security.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.security.Permission;
 
 
 public class InnerClassExample {

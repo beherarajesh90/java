@@ -1,8 +1,5 @@
 package com.java.java8Features.intro;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class RunnableLambdaExample {
     public static void main(String[] args) {
         /**

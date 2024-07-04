@@ -1,6 +1,7 @@
 package com.java.hackerrank;
 
-import java.util.*;
+import java.util.BitSet;
+import java.util.Scanner;
 
 public class BitSetExample {
 

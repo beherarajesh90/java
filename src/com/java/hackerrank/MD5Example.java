@@ -1,7 +1,8 @@
 package com.java.hackerrank;
 
-import java.util.*;
-import java.security.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Scanner;
 //import javax.xml.bind.DatatypeConverter;
 
 

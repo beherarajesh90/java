@@ -2,7 +2,6 @@ package com.java.dsa.stacks.problems;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.Scanner;
 
 public class CheckBalancedParenthesisProblem {
 

@@ -1,6 +1,8 @@
 package com.java.hackerrank;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 class Student {
