@@ -27,14 +27,17 @@ public class TopViewOfBinaryTree {
         List<Integer> list = new ArrayList<>();
         if(root == null) return list;
 
-        Map<Integer, Integer> map = new TreeMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         Deque<Pair> dq = new LinkedList<>();
         dq.addLast(new Pair(root, 0));
-
+        int minDist=0, maxDist=0;
         while(!dq.isEmpty()){
             Pair curPair = dq.pollFirst();
             TreeNode curNode = curPair.node;
             int curDist = curPair.dist;
+
+            minDist = Math.min(minDist, curDist);
+            maxDist = Math.max(maxDist, curDist);
 
             if(!map.containsKey(curDist)){
                 map.put(curDist, curNode.data);
@@ -49,7 +52,9 @@ public class TopViewOfBinaryTree {
             }
         }
 
-        list.addAll(map.values());
+        for(int start=minDist; start<=maxDist; start++){
+            list.add(map.get(start));
+        }
 
         return list;
     }
