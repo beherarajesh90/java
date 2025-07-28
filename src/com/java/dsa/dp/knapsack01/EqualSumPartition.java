@@ -1,4 +1,4 @@
-package com.java.dsa.dp;
+package com.java.dsa.dp.knapsack01;
 
 public class EqualSumPartition {
     public boolean canPartition(int[] nums) {

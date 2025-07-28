@@ -1,4 +1,4 @@
-package com.java.dsa.dp;
+package com.java.dsa.dp.knapsack01;
 
 class Knapsack01 {
     static int knapsack(int W, int val[], int wt[]) {
