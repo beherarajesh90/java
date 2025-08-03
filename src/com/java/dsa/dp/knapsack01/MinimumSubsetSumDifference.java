@@ -1,6 +1,33 @@
 package com.java.dsa.dp.knapsack01;
 
 public class MinimumSubsetSumDifference {
+
+    public static int minimumDifferenceOptimized(int[] nums) {
+
+        int n = nums.length;
+        int sum = 0;
+        for(int s: nums){
+            sum +=s;
+        }
+        if(sum%2 == 1) return -1;
+        int target = sum/2;
+        boolean[] dp = new boolean[target + 1];
+        dp[0] = true;
+        for(int num: nums){
+            for(int s=target; s>=num; s--){
+                dp[s] = dp[s] || dp[s - num];
+            }
+        }
+        int sum1 = 0;
+        for(int s=target; s>=0; s--){
+            if(dp[s]){
+                sum1 = s;
+                break;
+            }
+        }
+        int sum2 = sum - sum1;
+        return Math.abs(sum1 - sum2);
+    }
     public static int minimumDifference(int[] nums) {
 
         int n = nums.length;
@@ -41,7 +68,7 @@ public class MinimumSubsetSumDifference {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1,2,3,6,8};
-        System.out.println(minimumDifference(nums));
+        int[] nums = {1,2,3,6,8,6};
+        System.out.println(minimumDifferenceOptimized(nums));
     }
 }
